@@ -57,6 +57,17 @@ class Customer
   #compare films table id column to tickets table film_id column
   #Where the tickets-table customer_id column = customer(specified customer)
 
+  #check how many tickets were bought by a customer, same as above but with .count on array of hashes returned.
+  def how_many_tickets
+    sql = "SELECT films.* FROM films
+    INNER JOIN tickets
+    ON films.id = tickets.film_id
+    WHERE customer_id = $1"
+    values = [@id]
+    film_data = SqlRunner.run(sql, values)
+    return film_data.count
+  end
+
 
 
 
