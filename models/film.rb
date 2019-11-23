@@ -52,7 +52,11 @@ class Film
     return customer_data.map {|customer| Customer.new(customer)}
   end
 
-  
+  #Select full hash of customer from customers table,
+  #through join table 'tickets',
+  #comparing customers-table id column to = tickets-table customer id column
+  #where the tickets-table film_id = film(whatever film number)
+
 
 
 

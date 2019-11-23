@@ -38,7 +38,24 @@ class Customer
     sql = "UPDATE customers SET (name, funds) = ($1, $2) WHERE id = $3"
     values = [@name, @funds, @id]
     SqlRunner.run(sql, values)
-  end 
+  end
+
+  #Show which films a customer has booked to see
+
+  def films()
+    sql = "SELECT films.* FROM films
+    INNER JOIN tickets
+    ON films.id = tickets.film_id
+    WHERE customer_id = $1"
+    values = [@id]
+    film_data = SqlRunner.run(sql, values)
+    return film_data.map {|film| Film.new(film)}
+  end
+
+  #Select full hash of film info from films table,
+  #Check on the join table named tickets
+  #compare films table id column to tickets table film_id column
+  #Where the tickets-table customer_id column = customer(specified customer)
 
 
 
