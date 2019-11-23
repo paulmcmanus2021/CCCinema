@@ -23,6 +23,12 @@ class Ticket
     SqlRunner.run(sql)
   end
 
+  def Ticket.all()
+    sql = "SELECT * FROM tickets;"
+    data = SqlRunner.run(sql)
+    return data.map{|ticket| Ticket.new(ticket)}
+  end
+
   def delete()
     sql = "DELETE FROM tickets WHERE id = $1;"
     values = [@id]
