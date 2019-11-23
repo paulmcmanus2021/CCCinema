@@ -4,7 +4,7 @@ require_relative('models/film')
 
 require('pry-byebug')
 
-# Customer.delete_all()
+Customer.delete_all()
 
   customer1 = Customer.new({
     'name' => 'Joel Robinson',
