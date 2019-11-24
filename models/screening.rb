@@ -1,6 +1,7 @@
 require_relative('../db/sql_runner')
 
 class Screening
+
   attr_reader :id
   attr_accessor :film_id, :showtimes
 
@@ -16,8 +17,6 @@ class Screening
     screening = SqlRunner.run(sql, values)[0]
     @id = screening['id'].to_i
   end
-
-
 
 
 
