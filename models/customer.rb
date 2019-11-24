@@ -75,7 +75,7 @@ class Customer
     change = @funds - total_to_pay
     p "Your total is #{total_to_pay}"
     "Your change is #{change}"
-   end
+  end
 
 
 

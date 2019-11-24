@@ -22,7 +22,7 @@ Film.delete_all()
     customer2.save()
   customer3 = Customer.new({
     'name' => 'Tom Servo',
-    'funds' => 5
+    'funds' => 4
     })
     customer3.save()
 #end customers
