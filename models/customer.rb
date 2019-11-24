@@ -68,7 +68,14 @@ class Customer
     return film_data.count
   end
 
-
+  def buy_tickets
+    attending = self.films
+    cost_per_film = attending.map{|ticket| ticket.price}
+    total_to_pay = cost_per_film.sum
+    change = @funds - total_to_pay
+    p "Your total is #{total_to_pay}"
+    "Your change is #{change}"
+   end
 
 
 
